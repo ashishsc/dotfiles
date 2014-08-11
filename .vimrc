@@ -31,6 +31,8 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 " Required:
 call neobundle#end()
 
@@ -52,6 +54,11 @@ nnoremap <F1> :JSHint<CR>
 nnoremap <silent><F2> :lnext<CR>
 let jshint2_read = 1
 let jshint2_save = 1
+
+"cold folding for js
+au FileType javascript call JavaScriptFold()
+set foldlevel=99
+set foldlevelstart=99
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -95,7 +102,7 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
+" this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

@@ -1,9 +1,9 @@
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+    set nocompatible               " Be iMproved
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -34,6 +34,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 " Required:
 call neobundle#end()
 
@@ -71,6 +73,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Aesthetics
 :set guioptions-=T
+set background=dark
 colorscheme Monokai
 
 " Airline
@@ -93,7 +96,7 @@ function! g:UltiSnips_Complete()
         else
             call UltiSnips#JumpForwards()
             if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
+                return "\<TAB>"
             endif
         endif
     endif
@@ -110,9 +113,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 let g:ctrlp_user_command = {
-   \ 'types': {
-       \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v web\/htdocs'],
-       \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-       \ },
-   \ 'fallback': 'find %s -type f'
-   \ }
+            \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v web\/htdocs'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
+            \ 'fallback': 'find %s -type f'
+            \ }

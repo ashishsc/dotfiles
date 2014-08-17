@@ -1,13 +1,13 @@
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+    set nocompatible               " Be iMproved
 
-  " Required:
-  set runtimepath+=/home/ashish/.vim/bundle/neobundle.vim/
+    " Required:
+    set runtimepath+=/home/ashishsc/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('/home/ashish/.vim/bundle'))
+call neobundle#begin(expand('/home/ashishsc/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -71,7 +71,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Aesthetics
 :set guioptions-=T
-colorscheme Monokai
+set background=dark
+colorscheme solarized
 
 " Airline
 set laststatus=2
@@ -93,7 +94,7 @@ function! g:UltiSnips_Complete()
         else
             call UltiSnips#JumpForwards()
             if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
+                return "\<TAB>"
             endif
         endif
     endif
@@ -110,9 +111,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 let g:ctrlp_user_command = {
-   \ 'types': {
-       \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v web\/htdocs'],
-       \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-       \ },
-   \ 'fallback': 'find %s -type f'
-   \ }
+            \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v web\/htdocs'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
+            \ 'fallback': 'find %s -type f'
+            \ }

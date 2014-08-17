@@ -8,7 +8,6 @@ endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle'))
->>>>>>> master
 
 " Let NeoBundle manage NeoBundle
 " Required:

@@ -37,6 +37,7 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 " Required:
 call neobundle#end()
 

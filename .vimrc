@@ -38,6 +38,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'christoomey/vim-tmux-navigator'
 " Required:
 call neobundle#end()
 
@@ -68,11 +69,6 @@ set foldlevelstart=99
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" other mappings
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 " Aesthetics
 :set guioptions-=T
 set background=dark

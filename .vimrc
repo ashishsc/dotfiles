@@ -39,6 +39,7 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'digitaltoad/vim-jade'
 " Required:
 call neobundle#end()
 

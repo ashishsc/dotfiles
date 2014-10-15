@@ -21,14 +21,13 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'Shutnik/jshint2.vim'
+" NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'airblade/vim-gitgutter'
@@ -40,6 +39,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'chilicuil/vim-sml-coursera'
 " Required:
 call neobundle#end()
 
@@ -52,28 +52,31 @@ NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 filetype indent on
 set number
+set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" JSHint
-nnoremap <F1> :JSHint<CR>
-nnoremap <silent><F2> :lnext<CR>
-let jshint2_read = 1
-let jshint2_save = 1
-
-"cold folding for js
-au FileType javascript call JavaScriptFold()
-set foldlevel=99
-set foldlevelstart=99
+set foldmethod=indent
+autocmd BufWritePre * :%s/\s\+$//e
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " Aesthetics
-:set guioptions-=T
-set background=dark
-colorscheme Monokai
+syntax enable
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+    set guifont=Source\ Code\ Pro\ for\ Powerline
+
+    " Remove those silly silly bars
+    set guioptions-=T
+    set guioptions-=L
+    set guioptions-=r
+else
+    set background=dark
+    colorscheme Monokai
+endif
 
 " Airline
 set laststatus=2
@@ -86,30 +89,17 @@ set t_ut=
 " syntastic
 let g:synatastic_python_checkers = ['python', 'pep8']
 nnoremap <F3> :SyntasticCheck<CR>
-"  ultisnips youcompleteme conflict resolution
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-                return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
+" tabs
+nnoremap <Leader>th  :tabfirst<CR>
+nnoremap <Leader>tj  :tabnext<CR>
+nnoremap <Leader>tk  :tabprev<CR>
+nnoremap <Leader>tl  :tablast<CR>
+nnoremap <Leader>tt  :tabedit<Space>
+nnoremap <Leader>tn  :tabnext<Space>
+nnoremap <Leader>tm  :tabm<Space>
+nnoremap <Leader>td  :tabclose<CR>
+nnoremap <Leader>tc  :tabnew<CR>
 
 let g:ctrlp_user_command = {
             \ 'types': {

@@ -19,8 +19,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'bling/vim-airline'
 " NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -40,6 +40,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'chilicuil/vim-sml-coursera'
+NeoBundle 'Lokaltog/vim-easymotion'
 " Required:
 call neobundle#end()
 
@@ -58,6 +59,9 @@ set shiftwidth=4
 set expandtab
 set foldmethod=indent
 autocmd BufWritePre * :%s/\s\+$//e
+set ignorecase
+set smartcase
+set incsearch
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -79,8 +83,19 @@ else
 endif
 
 " Airline
-set laststatus=2
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
+set laststatus=2
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 let mapleader = ","
 
 " disable bg erase for tmux
@@ -101,6 +116,7 @@ nnoremap <Leader>tm  :tabm<Space>
 nnoremap <Leader>td  :tabclose<CR>
 nnoremap <Leader>tc  :tabnew<CR>
 
+let g:ctrlp_extensions = ['funky']
 let g:ctrlp_user_command = {
             \ 'types': {
             \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v web\/htdocs'],
@@ -108,3 +124,9 @@ let g:ctrlp_user_command = {
             \ },
             \ 'fallback': 'find %s -type f'
             \ }
+
+nmap s <Plug>(easymotion-s)
+omap t <Plug>(easymotion-bd-tl)
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1

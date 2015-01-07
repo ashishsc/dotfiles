@@ -21,7 +21,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'flazz/vim-colorschemes'
-" NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
@@ -31,8 +30,8 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -41,6 +40,10 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'chilicuil/vim-sml-coursera'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'cakebaker/scss-syntax.vim'
+
 " Required:
 call neobundle#end()
 
@@ -57,7 +60,8 @@ set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set foldmethod=indent
+set foldmethod=syntax
+" Automatically kill trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 set ignorecase
 set smartcase
@@ -111,7 +115,6 @@ nnoremap <Leader>tj  :tabnext<CR>
 nnoremap <Leader>tk  :tabprev<CR>
 nnoremap <Leader>tl  :tablast<CR>
 nnoremap <Leader>tt  :tabedit<Space>
-nnoremap <Leader>tn  :tabnext<Space>
 nnoremap <Leader>tm  :tabm<Space>
 nnoremap <Leader>td  :tabclose<CR>
 nnoremap <Leader>tc  :tabnew<CR>

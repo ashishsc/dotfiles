@@ -16,7 +16,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'linux' : 'make',
+            \     'unix' : 'gmake',
+            \    },
+            \ }
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
@@ -61,6 +71,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set foldmethod=syntax
+set foldlevelstart=1
 " Automatically kill trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 set ignorecase
@@ -83,7 +94,7 @@ if has('gui_running')
     set guioptions-=r
 else
     set background=dark
-    colorscheme Monokai
+    colorscheme solarized
 endif
 
 " Airline

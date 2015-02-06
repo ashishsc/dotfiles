@@ -84,6 +84,3 @@ stty -ixon
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias oh=nautilus .
-alias o=nautilus
-

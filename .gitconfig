@@ -1,0 +1,17 @@
+[alias]
+    st=status
+    co=checkout
+    hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[merge]
+	ff = false
+	tool = meld
+[user]
+	name = Ashish Chandwani
+	email = ashish@extrahop.com
+[push]
+	default = simple
+[diff]
+	tool = meld
+[core]
+	excludesfile = /home/ashish/.gitignore_global

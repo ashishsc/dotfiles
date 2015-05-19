@@ -14,8 +14,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
             \     'windows' : 'tools\\update-dll-mingw',
@@ -25,19 +23,27 @@ NeoBundle 'Shougo/vimproc.vim', {
             \     'unix' : 'gmake',
             \    },
             \ }
+" Version control
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'idanarye/vim-merginal'
+
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
+
+" Completion
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'honza/vim-snippets'
+NeoBundle 'ervandew/supertab'
+
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'honza/vim-snippets'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'pangloss/vim-javascript'
@@ -53,6 +59,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'fatih/vim-go'
 
 " Required:
 call neobundle#end()
@@ -70,7 +77,7 @@ set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=1
 " Automatically kill trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -155,3 +162,14 @@ let g:EasyMotion_use_smartsign_us = 1
 
 " Git commits
 au FileType gitcommit set tw=100
+
+" completion
+" make YCM compatible with UltiSnips (using supertab)
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+"let g:UltiSnipsExpandTrigger = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

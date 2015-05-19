@@ -51,8 +51,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/.local/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin"
 export EDITOR="vim"
+export POWERLINE_COMMAND="powerline"
+
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -84,3 +86,15 @@ stty -ixon
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias gs='git status'
+alias gnew='git co -b '
+alias gnewr='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+alias gdel='git branch -d '
+alias gdelr='git push origin --delete'
+alias gp'git push'
+alias gu='git up'
+alias glog='git log'
+alias ghist='git hist'
+alias tat="tmux a -t"
+alias tls="tmux ls"

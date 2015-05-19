@@ -6,6 +6,7 @@
 [merge]
 	ff = false
 	tool = meld
+    conflictstyle = diff3
 [user]
 	name = Ashish Chandwani
 	email = ashish@extrahop.com
@@ -15,3 +16,5 @@
 	tool = meld
 [core]
 	excludesfile = /home/ashish/.gitignore_global
+[rerere]
+	enabled = 1

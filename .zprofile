@@ -5,4 +5,4 @@ fi
 stty -ixon
 eval `ssh-agent -s`
 setxkbmap -option 'caps:ctrl_modifier'
-xcape -e 'Caps_Lock=Escape'
+xcape -e 'Caps_Lock=Escape' -t 200

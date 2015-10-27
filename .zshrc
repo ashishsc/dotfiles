@@ -98,5 +98,17 @@ alias glog='git log'
 alias ghist='git hist'
 alias tat="tmux a -t"
 alias tls="tmux ls"
+alias dps="docker ps"
+alias tf="tail -f"
+denter() {
+    docker exec -it $1 bash
+}
+alias dstopall=docker stop $(docker ps -a -q)
+alias drmall="docker stop $(docker ps -a -q)"
 
 alias ts="touch ~/www/web/static-content/scss/app.scss; touch ~/docs/static-content/scss/app.scss; touch ~/www/web/static-content/js/sliding-pane.js; touch ~/docs/static-content/js/common.js; touch ~/www/web/static-content/templates/partials/head.html; touch ~/docs/static-content/templates/partials/head.handlebars"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+fpath=(~/.zsh $fpath)

@@ -12,7 +12,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 " My Bundles here:
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
@@ -60,6 +59,7 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'pearofducks/ansible-vim'
 
 " Required:
 call neobundle#end()
@@ -89,6 +89,8 @@ set incsearch
 nmap <F8> :TagbarToggle<CR>
 
 " Aesthetics
+let g:indentLine_noConcealCursor=""
+
 syntax enable
 if has('gui_running')
     set background=dark

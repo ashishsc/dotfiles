@@ -173,3 +173,8 @@ au FileType gitcommit set tw=100
 "let g:UltiSnipsExpandTrigger = "<tab>"
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+
+set wildmode=longest,list,full
+set wildmenu

@@ -13,6 +13,8 @@
 	email = ashish@extrahop.com
 [push]
 	default = simple
+[pull]
+    rebase = preserve
 [diff]
 	tool = meld
 [core]

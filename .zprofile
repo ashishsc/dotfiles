@@ -3,4 +3,5 @@ if [ "$0" = "/usr/sbin/lightdm-session" -a "$DESKTOP_SESSION" = "i3" ]; then
     export $(gnome-keyring-daemon -s)
 fi
 stty -ixon
-eval `ssh-agent -s`
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape' -t 200

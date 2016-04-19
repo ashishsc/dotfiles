@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/"
 export EDITOR="vim"
 export POWERLINE_COMMAND="powerline"
 
@@ -98,3 +98,18 @@ alias glog='git log'
 alias ghist='git hist'
 alias tat="tmux a -t"
 alias tls="tmux ls"
+alias dps="docker ps"
+alias tf="tail -f"
+alias h='ssh -X holmium'
+denter() {
+    docker exec -it $1 bash
+}
+alias dstopall=docker stop $(docker ps -a -q)
+alias drmall="docker stop $(docker ps -a -q)"
+
+alias ts="touch ~/www/web/static-content/scss/app.scss; touch ~/docs/static-content/scss/app.scss; touch ~/www/web/static-content/js/sliding-pane.js; touch ~/docs/static-content/js/common.js; touch ~/www/web/static-content/templates/partials/head.html; touch ~/docs/static-content/templates/partials/head.handlebars"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+fpath=(~/.zsh $fpath)

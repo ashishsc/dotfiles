@@ -12,7 +12,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 " My Bundles here:
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
@@ -45,6 +44,7 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nvie/vim-togglemouse'
+NeoBundle 'sickill/vim-pasta'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
@@ -55,11 +55,13 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'chilicuil/vim-sml-coursera'
+NeoBundle 'elmcast/elm-vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'pearofducks/ansible-vim'
 
 " Required:
 call neobundle#end()
@@ -85,10 +87,17 @@ set ignorecase
 set smartcase
 set incsearch
 
+" elm
+let g:elm_format_autosave = 1
+let g:elm_detailed_complete = 1
+let g:elm_setup_keybindings = 1
+
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " Aesthetics
+let g:indentLine_noConcealCursor=""
+
 syntax enable
 if has('gui_running')
     set background=dark
@@ -123,13 +132,16 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-let mapleader = ","
+let mapleader = " "
 
 " disable bg erase for tmux
 set t_ut=
 
 " syntastic
 let g:synatastic_python_checkers = ['python', 'pep8']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
 nnoremap <F3> :SyntasticCheck<CR>
 
 " tabs
@@ -164,6 +176,9 @@ let g:EasyMotion_use_smartsign_us = 1
 au FileType gitcommit set tw=100
 
 " completion
+let g:ycm_semantic_triggers = {
+            \ 'elm' : ['.'],
+            \}
 " make YCM compatible with UltiSnips (using supertab)
 "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 "let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -173,3 +188,8 @@ au FileType gitcommit set tw=100
 "let g:UltiSnipsExpandTrigger = "<tab>"
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+
+set wildmode=longest,list,full
+set wildmenu

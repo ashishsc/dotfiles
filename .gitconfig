@@ -2,6 +2,7 @@
     st=status
     co=checkout
     hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    delete-untracked=clean -fd
 
 [merge]
 	ff = false
@@ -9,9 +10,11 @@
     conflictstyle = diff3
 [user]
 	name = Ashish Chandwani
-	email = ashish@extrahop.com
+	email = ashish.s.chandwani@gmail.com
 [push]
 	default = simple
+[pull]
+    rebase = preserve
 [diff]
 	tool = meld
 [core]

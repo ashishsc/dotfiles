@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/"
 export EDITOR="vim"
 export POWERLINE_COMMAND="powerline"
 
@@ -112,3 +112,5 @@ alias ts="touch ~/www/web/static-content/scss/app.scss; touch ~/docs/static-cont
 export PATH="/usr/local/heroku/bin:$PATH"
 
 fpath=(~/.zsh $fpath)
+
+alias h="ssh -X holmium"

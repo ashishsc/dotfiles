@@ -100,6 +100,7 @@ alias tat="tmux a -t"
 alias tls="tmux ls"
 alias dps="docker ps"
 alias tf="tail -f"
+alias h='ssh -X holmium'
 denter() {
     docker exec -it $1 bash
 }
@@ -112,5 +113,3 @@ alias ts="touch ~/www/web/static-content/scss/app.scss; touch ~/docs/static-cont
 export PATH="/usr/local/heroku/bin:$PATH"
 
 fpath=(~/.zsh $fpath)
-
-alias h="ssh -X holmium"

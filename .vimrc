@@ -132,6 +132,8 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+nnoremap <SPACE> <Nop>
 let mapleader = " "
 
 " disable bg erase for tmux

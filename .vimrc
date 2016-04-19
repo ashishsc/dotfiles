@@ -43,6 +43,8 @@ NeoBundle 'ervandew/supertab'
 
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'xolox/vim-easytags'
+NeoBundle 'xolox/vim-misc'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'sickill/vim-pasta'
 NeoBundle 'airblade/vim-gitgutter'
@@ -102,7 +104,7 @@ syntax enable
 if has('gui_running')
     set background=dark
     colorscheme solarized
-    set guifont=Source\ Code\ Pro\ for\ Powerline
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
 
     " Remove those silly silly bars
     set guioptions-=T
@@ -132,6 +134,8 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+nnoremap <SPACE> <Nop>
 let mapleader = " "
 
 " disable bg erase for tmux

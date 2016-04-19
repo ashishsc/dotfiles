@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/home/ashish/repos/web-shared/bin:/usr/local/elm"
 export EDITOR="vim"
 export POWERLINE_COMMAND="powerline"
 
@@ -96,11 +96,16 @@ alias gp'git push'
 alias gu='git up'
 alias glog='git log'
 alias ghist='git hist'
+alias grb='git rebase'
 alias tat="tmux a -t"
 alias tls="tmux ls"
 alias dps="docker ps"
+alias b="ssh buildium"
 alias tf="tail -f"
 alias h='ssh -X holmium'
+alias tso="tig origin/"
+alias n3="npm install -g npm@3.7.5"
+alias n2="npm install -g npm@2.14.22"
 denter() {
     docker exec -it $1 bash
 }
@@ -113,3 +118,4 @@ alias ts="touch ~/www/web/static-content/scss/app.scss; touch ~/docs/static-cont
 export PATH="/usr/local/heroku/bin:$PATH"
 
 fpath=(~/.zsh $fpath)
+eval $(thefuck --alias)

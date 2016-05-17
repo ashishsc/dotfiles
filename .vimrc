@@ -166,6 +166,9 @@ nnoremap <Leader>tm  :tabm<Space>
 nnoremap <Leader>td  :tabclose<CR>
 nnoremap <Leader>tc  :tabnew<CR>
 
+" easy system buffer select
+nnoremap <Leader>y  "+
+
 " NERDToggle
 nnoremap <F4> :NERDTreeToggle<CR>
 

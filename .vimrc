@@ -36,7 +36,15 @@ NeoBundle 'scrooloose/nerdcommenter'
 
 " Completion
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Valloric/YouCompleteMe'
+let g:neobundle#install_process_timeout = 1500
+NeoBundle 'Valloric/YouCompleteMe', {
+     \ 'build'      : {
+        \ 'mac'     : './install.py',
+        \ 'unix'    : './install.py --tern-completer',
+        \ 'windows' : 'install.py',
+        \ 'cygwin'  : './install.py'
+        \ }
+     \ }
 "NeoBundle 'SirVer/ultisnips'
 "NeoBundle 'honza/vim-snippets'
 NeoBundle 'ervandew/supertab'

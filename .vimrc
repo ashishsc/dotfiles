@@ -28,6 +28,7 @@ NeoBundle 'idanarye/vim-merginal'
 
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'flazz/vim-colorschemes'
@@ -91,6 +92,8 @@ set incsearch
 let g:elm_format_autosave = 1
 let g:elm_detailed_complete = 1
 let g:elm_setup_keybindings = 1
+autocmd Filetype elm setlocal ts=2 sts=2 sw=2
+
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>

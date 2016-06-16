@@ -50,8 +50,7 @@ plugins=(git tmux stack)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH="/opt/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/:/home/ashish/.local/bin"
+export PATH="/opt/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/:/home/ashish/.local/bin:/usr/local/elm"
 export EDITOR="vim"
 export POWERLINE_COMMAND="powerline"
 
@@ -115,3 +114,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 fpath=(~/.zsh $fpath)
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "/home/ashish/.gvm/scripts/gvm" ]] && source "/home/ashish/.gvm/scripts/gvm"

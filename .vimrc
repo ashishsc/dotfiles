@@ -29,6 +29,7 @@ NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'flazz/vim-colorschemes'
@@ -82,6 +83,12 @@ set shiftwidth=4
 set expandtab
 set foldmethod=indent
 set foldlevelstart=1
+" Elm
+augroup Elm
+    autocmd!
+    autocmd FileType elm setlocal shiftwidth=2 softtabstop=2 tabstop=2
+    autocmd BufWrite *.elm setlocal filetype=elm
+augroup END
 " Automatically kill trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 set ignorecase
@@ -92,7 +99,6 @@ set incsearch
 let g:elm_format_autosave = 1
 let g:elm_detailed_complete = 1
 let g:elm_setup_keybindings = 1
-autocmd Filetype elm setlocal ts=2 sts=2 sw=2
 
 
 " tagbar

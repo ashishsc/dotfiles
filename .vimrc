@@ -65,6 +65,14 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'pearofducks/ansible-vim'
 
+" Haskell plugins
+NeoBundle 'neovimhaskell/haskell-vim'
+NeoBundle 'enomsg/vim-haskellConcealPlus'
+"NeoBundle 'eaglemt/neco-ghc' can't figure out what the deal with the
+"neobundle install here is
+NeoBundle 'Twinside/vim-hoogle'
+NeoBundle 'mpickering/hlint-refactor-vim'
+
 " Required:
 call neobundle#end()
 
@@ -100,6 +108,10 @@ let g:elm_format_autosave = 1
 let g:elm_detailed_complete = 1
 let g:elm_setup_keybindings = 1
 
+autocmd Filetype elm setlocal ts=4 sts=4 sw=4
+
+" haskell
+autocmd FileType haskell let &formatprg="stylish-haskell"
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -204,3 +216,8 @@ let g:ycm_semantic_triggers = {
 
 set wildmode=longest,list,full
 set wildmenu
+
+" neovim
+if !has('nvim')
+    set encoding=utf8
+endif

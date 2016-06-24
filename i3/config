@@ -167,7 +167,7 @@ bar {
         status_command i3status
         tray_output primary
 }
-
+#
 # Pulse Audio controls
 #bindcode XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 #bindcode XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume

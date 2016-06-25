@@ -44,6 +44,7 @@ call dein#add('Yggdroot/indentLine')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('blueyed/vim-diminactive')
 
 " JavaScript
 call dein#add('marijnh/tern_for_vim')
@@ -97,7 +98,7 @@ let g:indentLine_noConcealCursor=""
 " Colorcolumn
 set fo-=t
 set colorcolumn=101
-highlight ColorColumn ctermbg=10
+highlight ColorColumn ctermbg=0
 
 set number
 
@@ -113,6 +114,7 @@ set foldlevelstart=1
 " search
 set hlsearch
 set smartcase
+set ignorecase
 set incsearch
 
 

@@ -5,19 +5,20 @@
     delete-untracked=clean -fd
 
 [merge]
-	ff = false
-	tool = meld
+    ff = false
+    tool = meld
     conflictstyle = diff3
 [user]
-	name = Ashish Chandwani
-	email = ashish.s.chandwani@gmail.com
+    name = Ashish Chandwani
+    email = ashish.s.chandwani@gmail.com
 [push]
-	default = simple
+    default = simple
 [pull]
     rebase = preserve
 [diff]
-	tool = meld
+    tool = meld
 [core]
-	excludesfile = /home/ashish/.gitignore_global
+    excludesfile = /home/ashish/.gitignore_global
+    editor = nvim
 [rerere]
-	enabled = 1
+    enabled = 1

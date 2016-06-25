@@ -28,7 +28,9 @@ call dein#add('christoomey/vim-tmux-navigator')
 
 " Completion
 call dein#add('Raimondi/delimitMate')
-call dein#add('Valloric/YouCompleteMe')
+" TODO disabled until I can figure it out
+" call dein#add('Valloric/YouCompleteMe')
+call dein#add('Shougo/deoplete.nvim')
 
 " Linting
 call dein#add('scrooloose/syntastic')
@@ -47,7 +49,9 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('blueyed/vim-diminactive')
 
 " JavaScript
+" TODO: cant use tern_for_vim deoplete until
 call dein#add('marijnh/tern_for_vim')
+call dein#add('carlitux/deoplete-ternjs')
 
 " Elm
 call dein#add('elmcast/elm-vim')
@@ -55,7 +59,7 @@ call dein#add('elmcast/elm-vim')
 " Haskell
 call dein#add('neovimhaskell/haskell-vim')
 call dein#add('enomsg/vim-haskellConcealPlus')
-"NeoBundle 'eaglemt/neco-ghc'
+call dein#add('eagletmt/neco-ghc')
 call dein#add('Twinside/vim-hoogle')
 call dein#add('mpickering/hlint-refactor-vim')
 
@@ -168,10 +172,25 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
 " YouCompleteMe
-let g:ycm_semantic_triggers = {
-      \ 'elm' : ['.'],
-      \}
+" TODO: Disabled until I can get it to work
+"let g:ycm_semantic_triggers = {
+"      \ 'elm' : ['.'],
+"      \}
+" Deoplete
+" Use deoplete until we can get YCM working
+" autocomplete config
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
 
+" tab for cycling through options
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" enter closes options if present and inserts linebreak
+" apparently this has to be that complicated
+inoremap <silent> <CR> <C-r>=<SID>close_and_linebreak()<CR>
+function! s:close_and_linebreak()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
 
 " -------- Other ---------
 set wildmode=longest,list,full

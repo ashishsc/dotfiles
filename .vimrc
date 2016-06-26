@@ -67,8 +67,7 @@ NeoBundle 'pearofducks/ansible-vim'
 " Haskell plugins
 NeoBundle 'neovimhaskell/haskell-vim'
 NeoBundle 'enomsg/vim-haskellConcealPlus'
-"NeoBundle 'eaglemt/neco-ghc' can't figure out what the deal with the
-"neobundle install here is
+NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'mpickering/hlint-refactor-vim'
 

@@ -99,6 +99,8 @@ endif
 
 let g:indentLine_noConcealCursor=""
 
+:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 " Colorcolumn
 set fo-=t
 set colorcolumn=101

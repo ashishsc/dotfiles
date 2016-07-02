@@ -68,6 +68,8 @@ NeoBundle 'pearofducks/ansible-vim'
 NeoBundle 'neovimhaskell/haskell-vim'
 NeoBundle 'enomsg/vim-haskellConcealPlus'
 NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'eagletmt/ghcmod-vim'
+
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'mpickering/hlint-refactor-vim'
 

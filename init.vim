@@ -33,7 +33,7 @@ call dein#add('Raimondi/delimitMate')
 call dein#add('Shougo/deoplete.nvim')
 
 " Linting
-call dein#add('scrooloose/syntastic')
+call dein#add('neomake/neomake')
 
 " File Navigation
 call dein#add('kien/ctrlp.vim')
@@ -66,6 +66,7 @@ call dein#add('mpickering/hlint-refactor-vim')
 " Other
 call dein#add('tpope/vim-sleuth')
 call dein#add('sickill/vim-pasta')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
 " Required:
 call dein#end()
@@ -168,16 +169,14 @@ let g:elm_setup_keybindings = 1
 " haskell
 autocmd FileType haskell let &formatprg="stylish-haskell"
 
+" Linting
+autocmd! BufWritePost * Neomake
+
 " airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
-" YouCompleteMe
-" TODO: Disabled until I can get it to work
-"let g:ycm_semantic_triggers = {
-"      \ 'elm' : ['.'],
-"      \}
 " Deoplete
 " Use deoplete until we can get YCM working
 " autocomplete config

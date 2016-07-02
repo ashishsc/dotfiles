@@ -60,6 +60,7 @@ call dein#add('elmcast/elm-vim')
 call dein#add('neovimhaskell/haskell-vim')
 call dein#add('enomsg/vim-haskellConcealPlus')
 call dein#add('eagletmt/neco-ghc')
+call dein#add('eagletmt/ghcmod-vim')
 call dein#add('Twinside/vim-hoogle')
 call dein#add('mpickering/hlint-refactor-vim')
 

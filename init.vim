@@ -33,7 +33,7 @@ call dein#add('Raimondi/delimitMate')
 call dein#add('Shougo/deoplete.nvim')
 
 " Linting
-call dein#add('neomake/neomake')
+call dein#add('scrooloose/syntastic')
 
 " File Navigation
 call dein#add('kien/ctrlp.vim')
@@ -171,7 +171,14 @@ let g:elm_setup_keybindings = 1
 autocmd FileType haskell let &formatprg="stylish-haskell"
 
 " Linting
-autocmd! BufWritePost * Neomake
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " airline
 set laststatus=2

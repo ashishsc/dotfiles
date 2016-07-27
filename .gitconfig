@@ -3,6 +3,7 @@
     co=checkout
     hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     delete-untracked=clean -fd
+	up = pull --rebase --autostash
 
 [merge]
     ff = false

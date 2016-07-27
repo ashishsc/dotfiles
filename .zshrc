@@ -100,7 +100,6 @@ alias tls="tmux ls"
 alias dps="docker ps"
 alias tf="tail -f"
 alias h='ssh -X holmium'
-alias vim="nvim"
 denter() {
     docker exec -it $1 bash
 }

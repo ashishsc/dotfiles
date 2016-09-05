@@ -194,5 +194,5 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_out
 #
 # Please remove the following exec line:
 #######################################################################
-exec --no-startup-id /opt/xflux -z 98112
+exec --no-startup-id xflux -z 98112
 exec i3-config-wizard

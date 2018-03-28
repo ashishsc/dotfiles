@@ -20,6 +20,6 @@
     tool = meld
 [core]
     excludesfile = /home/ashish/.gitignore_global
-    editor = nvim
+	editor = code --wait
 [rerere]
     enabled = 1

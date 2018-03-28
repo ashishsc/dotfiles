@@ -69,6 +69,7 @@ NeoBundle 'neovimhaskell/haskell-vim'
 NeoBundle 'enomsg/vim-haskellConcealPlus'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle "alx741/vim-hindent"
 
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'mpickering/hlint-refactor-vim'

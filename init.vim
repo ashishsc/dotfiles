@@ -5,15 +5,34 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath^=/home/ashish/.nvim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/ashish/.nvim/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin(expand('/home/ashish/.nvim'))
+if dein#load_state('/Users/ashish/.nvim')
+  call dein#begin('/Users/ashish/.nvim')
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  " Let dein manage dein
+  call dein#add('/Users/ashish/.nvim/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 " Plugins
 

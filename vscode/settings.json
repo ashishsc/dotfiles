@@ -1,0 +1,45 @@
+{
+    "editor.fontFamily": "'Roboto Mono for Powerline', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.fontSize": 11,
+    "editor.fontSize": 12,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "vim.hlsearch": true,
+    "vim.foldfix": true,
+    "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+    "workbench.colorTheme": "Solarized Dark",
+    "typescript.npm": "/home/ashish/n/bin/npm",
+    "typescript.tsserver.log": "verbose",
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 0,
+    "prettier.disableLanguages": [
+        "javascript",
+        "json",
+        "html"
+    ],
+    "editor.formatOnSave": true,
+    "tslint.autoFixOnSave": true,
+    "workbench.editor.showTabs": false,
+    "todohighlight.keywords": [
+        "XXX:"
+    ],
+    "emmet.showExpandedAbbreviation": "never",
+    "editor.dragAndDrop": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+    "html.format.enable": false,
+    "haskell.symbols.provider": "fast-tags",
+    "gitlens.keymap": "alternate",
+    "workbench.startupEditor": "newUntitledFile",
+    "[haskell]": {
+        "editor.tabSize": 2
+    }
+}

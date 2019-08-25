@@ -45,12 +45,12 @@ ZSH_THEME="solarized-powerline"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux stack)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/opt/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ashish/go/bin:/usr/local/go/bin:/usr/local/elm/:/home/ashish/.local/bin:/usr/local/elm"
+export PATH="/opt/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/usr/local/elm/:/root/.local/bin:"
 export EDITOR="vim"
 export POWERLINE_COMMAND="powerline"
 
@@ -92,27 +92,11 @@ alias gnewr='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gdel='git branch -d '
 alias gdelr='git push origin --delete'
 alias gp'git push'
-alias gu='git up'
-alias glog='git log'
-alias ghist='git hist'
 alias tat="tmux a -t"
 alias tls="tmux ls"
-alias dps="docker ps"
 alias tf="tail -f"
-alias h='ssh -X holmium'
-denter() {
-    docker exec -it $1 bash
-}
-alias dstopall=docker stop $(docker ps -a -q)
-alias drmall="docker stop $(docker ps -a -q)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 fpath=(~/.zsh $fpath)
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "/home/ashish/.gvm/scripts/gvm" ]] && source "/home/ashish/.gvm/scripts/gvm"

@@ -45,7 +45,7 @@ ZSH_THEME="solarized-powerline"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,7 +96,7 @@ alias tat="tmux a -t"
 alias tls="tmux ls"
 alias tf="tail -f"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 fpath=(~/.zsh $fpath)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=red'
